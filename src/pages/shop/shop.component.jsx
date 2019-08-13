@@ -1,5 +1,7 @@
 import React from "react";
-import SHOP_DATA from "./shop.data.js";
+import SHOP_DATA from "./shop.data";
+
+import PrevewCollection from "../../components/prevew-collection/prevew-collection.component";
 
 class ShopPage extends React.Component {
   constructor(props) {
@@ -11,9 +13,12 @@ class ShopPage extends React.Component {
   }
 
   render() {
+    const { collections } = this.state;
     return (
-      <div>
-        <h1>ShopP age</h1>
+      <div ClassName="shop-page">
+        {collections.map(({ id, ...otherCollectionProps }) => (
+          <PrevewCollection key={id} {...otherCollectionProps} />
+        ))}
       </div>
     );
   }
