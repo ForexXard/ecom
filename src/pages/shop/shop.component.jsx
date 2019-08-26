@@ -15,7 +15,7 @@ class ShopPage extends React.Component {
   render() {
     const { collections } = this.state;
     return (
-      <div ClassName="shop-page">
+      <div className="shop-page">
         {collections.map(({ id, ...otherCollectionProps }) => (
           <PrevewCollection key={id} {...otherCollectionProps} />
         ))}
